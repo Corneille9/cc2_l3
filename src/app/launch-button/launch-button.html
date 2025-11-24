@@ -1,0 +1,55 @@
+<div class=" py-5">
+  <div class="d-flex justify-content-center mb-5">
+    <button
+      class="btn btn-danger"
+      (click)="onLaunch()"
+      [disabled]="loading()">
+      <span class="btn-text">{{ loading() ? 'Chargement...' : 'LAUNCH' }}</span>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="card shadow-sm h-100 w-100">
+        <div class="card-header">
+          <h5 class="mb-0">
+            Resulat de la Requete
+          </h5>
+        </div>
+        <div class="card-body">
+          @if (!loading() && result) {
+            <div class="w-100">
+              <div class="mb-2">
+                <strong>Name:</strong> {{ result.name }}
+              </div>
+              <div class="mb-2">
+                <strong>Email:</strong> {{ result.email }}
+              </div>
+              <div class="mb-2">
+                <strong>Username:</strong> {{ result.username }}
+              </div>
+              <div class="mb-2">
+                <strong>Company:</strong> {{ result.company?.name }}
+              </div>
+              <pre class="mt-2 p-3 bg-light rounded">{{ result | json }}</pre>
+
+            </div>
+          } @else if (!result && !loading()) {
+            <div class="text-center text-muted">
+              <i class="bi bi-hand-index-thumb fs-1 mb-2"></i>
+              <p>Cliquez sur le bouton "LAUNCH" pour charger les données</p>
+            </div>
+          } @else if (loading()) {
+            <div class="text-center text-muted">
+              <div class="spinner-border spinner-border-sm me-2" role="status">
+                <span class="visually-hidden">Chargement...</span>
+              </div>
+              Chargement en cours...
+            </div>
+          }
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

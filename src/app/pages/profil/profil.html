@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="profil-page">
+    <div class="row flex justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow mb-4">
+          <div class="card-header bg-white">
+            <h4 class="mb-0">Informations personnelles</h4>
+          </div>
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col-sm-4">
+                <strong>Nom complet:</strong>
+              </div>
+              <div class="col-sm-8">
+                {{ user.name }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-4">
+                <strong>Email:</strong>
+              </div>
+              <div class="col-sm-8">
+                {{ user.email }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-4">
+                <strong>Rôle:</strong>
+              </div>
+              <div class="col-sm-8">
+                <span class="badge bg-primary">{{ user.role }}</span>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-4">
+                <strong>Membre depuis:</strong>
+              </div>
+              <div class="col-sm-8">
+                {{ user.joined }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <strong>Bio:</strong>
+              </div>
+              <div class="col-sm-8">
+                {{ user.bio }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

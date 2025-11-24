@@ -1,0 +1,39 @@
+<div class="">
+  <div class="text-center mb-5">
+    <h1 class="display-4 mb-3 text-primary fw-bold">Foire aux questions</h1>
+  </div>
+
+  <div class="bg-warning-subtle p-5">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-md-5 h-100">
+          <div class="list-group list-group-flush ">
+            @for (faq of faqs; track faq.id) {
+              <button
+                type="button"
+                class="list-group-item list-group-item-action border-0"
+                [class.bg-transparent]="selectedFaq() !== faq.id"
+                [class.bg-white]="selectedFaq() == faq.id"
+                [class.text-primary]="selectedFaq() === faq.id"
+                [class.active]="selectedFaq() === faq.id"
+                (click)="selectFaq(faq.id)">
+                {{ faq.question }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="bg-white h-100 p-5">
+            @if (selectedContent()) {
+              <div>
+                <p class="mb-0">{{ selectedContent()?.answer }}</p>
+              </div>
+            }
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

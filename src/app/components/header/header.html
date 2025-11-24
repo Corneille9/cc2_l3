@@ -1,0 +1,36 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg" [class.bg-primary]="headerState.isToggled()">
+    <div class="container">
+      <a class="navbar-brand" [class.text-white]="headerState.isToggled()" routerLink="/">Mon Application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" [class.text-white]="headerState.isToggled()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Accueil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.text-white]="headerState.isToggled()" routerLink="/about" routerLinkActive="active">
+              À propos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.text-white]="headerState.isToggled()" routerLink="/profil" routerLinkActive="active">
+              Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.text-white]="headerState.isToggled()" routerLink="/login" routerLinkActive="active">
+              Connexion
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+

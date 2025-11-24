@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="login-page">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow">
+          <div class="card-body p-5">
+            <h2 class="text-center mb-4">Connexion</h2>
+
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  [(ngModel)]="email"
+                  name="email"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  [(ngModel)]="password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label" for="remember">
+                  Se souvenir de moi
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100 mb-3">
+                Se connecter
+              </button>
+
+              <div class="text-center">
+                <a href="#" class="text-muted small">Mot de passe oublié ?</a>
+              </div>
+            </form>
+
+            <hr class="my-4">
+
+            <div class="text-center">
+              <p class="text-muted mb-2">Pas encore de compte ?</p>
+              <a routerLink="/" class="btn btn-outline-secondary">
+                Retour à l'accueil
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
