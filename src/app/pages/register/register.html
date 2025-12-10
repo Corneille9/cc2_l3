@@ -1,0 +1,158 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+
+      <!-- Loader -->
+      @if (isLoading()) {
+        <div class="text-center py-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Chargement...</span>
+          </div>
+          <p class="mt-3">Chargement en cours...</p>
+        </div>
+      }
+
+      <!-- Error state -->
+      @if (loadError()) {
+        <div class="alert alert-danger text-center mt-5" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          Une erreur est survenue lors du chargement. Veuillez réessayer plus tard.
+          <div class="mt-3">
+            <a routerLink="/error" class="btn btn-outline-danger btn-sm">Voir détails de l'erreur</a>
+          </div>
+        </div>
+      }
+
+      <!-- Loaded state -->
+      @if (isLoaded()) {
+        <div class="card shadow mt-4">
+          <div class="card-body p-5">
+            <div class="alert alert-success mb-3" role="alert">
+              Loaded
+            </div>
+
+            <h2 class="text-center mb-4">Inscription</h2>
+
+            <!-- Success message -->
+            @if (isSuccess()) {
+              <div class="alert alert-success" role="alert">
+                <strong>Inscription réussie !</strong> Votre compte a été créé avec succès.
+              </div>
+            }
+
+            @if (!isSuccess()) {
+              <form (ngSubmit)="onSubmit()">
+                <!-- Nom -->
+                <div class="mb-3">
+                  <label for="nom" class="form-label">Nom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [class.is-invalid]="errors().nom"
+                    id="nom"
+                    [(ngModel)]="nom"
+                    name="nom"
+                    placeholder="Dupont"
+                  />
+                  @if (errors().nom) {
+                    <div class="invalid-feedback">
+                      {{ errors().nom }}
+                    </div>
+                  }
+                </div>
+
+                <!-- Prenom -->
+                <div class="mb-3">
+                  <label for="prenom" class="form-label">Prénom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [class.is-invalid]="errors().prenom"
+                    id="prenom"
+                    [(ngModel)]="prenom"
+                    name="prenom"
+                    placeholder="Jean"
+                  />
+                  @if (errors().prenom) {
+                    <div class="invalid-feedback">
+                      {{ errors().prenom }}
+                    </div>
+                  }
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    [class.is-invalid]="errors().email"
+                    id="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="votre@email.com"
+                  />
+                  @if (errors().email) {
+                    <div class="invalid-feedback">
+                      {{ errors().email }}
+                    </div>
+                  }
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    [class.is-invalid]="errors().password"
+                    id="password"
+                    [(ngModel)]="password"
+                    name="password"
+                    placeholder="••••••••"
+                  />
+                  @if (errors().password) {
+                    <div class="invalid-feedback">
+                      {{ errors().password }}
+                    </div>
+                  }
+                  <div class="form-text">Au moins 8 caractères avec un chiffre</div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                  <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    [class.is-invalid]="errors().confirmPassword"
+                    id="confirmPassword"
+                    [(ngModel)]="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="••••••••"
+                  />
+                  @if (errors().confirmPassword) {
+                    <div class="invalid-feedback">
+                      {{ errors().confirmPassword }}
+                    </div>
+                  }
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-3">
+                  S'inscrire
+                </button>
+
+                <div class="text-center">
+                  <span class="text-muted">Déjà un compte ?</span>
+                  <a routerLink="/login" class="ms-1">Se connecter</a>
+                </div>
+              </form>
+            }
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>
+

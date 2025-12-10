@@ -5,6 +5,9 @@ import { HomepageComponent } from './pages/homepage/homepage';
 import { LoginComponent } from './pages/login/login';
 import { ProfilComponent } from './pages/profil/profil';
 import { AboutComponent } from './pages/about/about';
+import { RegisterComponent } from './pages/register/register';
+import { ErrorComponent } from './pages/error/error';
+import { IntegrationComponent } from './pages/integration/integration';
 
 export const routes: Routes = [
   // Routes avec footer (Default Template)
@@ -19,6 +22,10 @@ export const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'integration',
+        component: IntegrationComponent
       }
     ]
   },
@@ -34,6 +41,14 @@ export const routes: Routes = [
       {
         path: 'profil',
         component: ProfilComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'error',
+        component: ErrorComponent
       }
     ]
   }

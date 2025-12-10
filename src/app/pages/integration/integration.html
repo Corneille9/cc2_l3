@@ -1,0 +1,54 @@
+<div class="integration-container d-flex align-items-center justify-content-center vh-100">
+  <div class="circle-menu position-relative">
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center"
+      [class.active]="hoveredItem() === 25"
+      (mouseenter)="setHover(25)"
+      style="top: 5%; left: 50%; width: 150px; height: 150px;">
+      <span class="fw-bold" style="font-size: 2.5rem;">25</span>
+    </div>
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center"
+      [class.active]="hoveredItem() === 15"
+      (mouseenter)="setHover(15)"
+      style="top: 30%; left: 35%; width: 90px; height: 90px;">
+      <span class="fw-bold" style="font-size: 1.5rem;">15</span>
+    </div>
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center"
+      [class.active]="hoveredItem() === 5"
+      (mouseenter)="setHover(5)"
+      style="top: 25%; left: 85%; width: 60px; height: 60px;">
+      <span class="fw-bold" style="font-size: 1.3rem;">5</span>
+    </div>
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center"
+      [class.active]="hoveredItem() === 10"
+      (mouseenter)="setHover(10)"
+      style="top: 40%; left: 80%; width: 80px; height: 80px;">
+      <span class="fw-bold" style="font-size: 1.4rem;">10</span>
+    </div>
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center"
+      [class.active]="hoveredItem() === 55"
+      (mouseenter)="setHover(55)"
+      style="top: 30%; left: 60%; width: 75px; height: 75px;">
+      <span class="fw-bold" style="font-size: 1.6rem;">55</span>
+    </div>
+
+    <div
+      class="circle-item position-absolute translate-middle rounded-circle d-flex align-items-center justify-content-center text-center"
+      [class.active]="hoveredItem() === 0"
+      (mouseenter)="setHover(0)"
+      style="top: 50%; left: 50%; width: 100px; height: 100px;">
+      <span class="fw-bold" style="font-size: 0.7rem; line-height: 1.2;">HAVE A<br>BREAK</span>
+    </div>
+
+  </div>
+</div>
+
